@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ['airbnb-base'],
   parser: '@typescript-eslint/parser',
@@ -16,6 +17,16 @@ module.exports = {
     'import/extensions': 'off',
     'prefer-regex-literals': 'off',
     'no-console': 'off',
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          '**/*.test.ts',
+          '**/*.test.tsx',
+        ],
+        optionalDependencies: false,
+      },
+    ],
   },
   root: true,
   settings: {
