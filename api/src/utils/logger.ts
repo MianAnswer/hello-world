@@ -11,7 +11,7 @@ function getLogLevel(env: Environment): string {
     case Environment.TEST:
       return 'error'
     default:
-      throw new Error('Unknown environment')
+      return 'debug'
   }
 }
 
